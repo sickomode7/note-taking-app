@@ -16,6 +16,8 @@ if (!MONGO_URL) {
 
 // Configure CORS
 const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:5173"
+console.log("CORS_ORIGIN set to:", CORS_ORIGIN)
+console.log("CORS_ORIGIN received:", process.env.CORS_ORIGIN)
 
 // Allow requests with no origin (server-to-server, curl). Otherwise only allow the single configured origin.
 const corsOptions = {
