@@ -6,7 +6,7 @@ import noteRoutes from './routes/note.route.js'
 
 const app = express()
 dotenv.config()
-const port = process.env.PORT || 4002
+const port = process.env.PORT || 8000
 // Validate required environment variables
 const MONGO_URL = process.env.MONGO_URL
 if (!MONGO_URL) {
@@ -27,6 +27,7 @@ const corsOptions = {
 // Database Connection
 mongoose
   .connect(MONGO_URL)
+  .then(() => console.log("Connected to MongoDB"))
   .catch((error) => {
     console.error("Error connecting to MongoDB", error)
     process.exit(1)
